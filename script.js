@@ -9,18 +9,13 @@ var taskBtns = document.querySelectorAll('.task_check_btn');
 var themeBtn = document.querySelector('.theme_toogle_btn');
 // Do this when we submit the form
 taskform.addEventListener('submit', function (e) {
-
     e.preventDefault();
     var newtaskInputValue = taskform.elements.new_task_input;
 
-
     addTask(newtaskInputValue.value)
-
     // Reset input value to empty
     newtaskInputValue.value = '';
     container.classList.remove('task_list_empty')
-
-
 })
 
 // To  add task in List
@@ -51,7 +46,6 @@ function addTask(newTask) {
 
     // Run this function when task is completed or checkbox is checked
     onTaskComplete(newCheckBtn)
-
 }
 
 // To remove the completed task
@@ -66,29 +60,21 @@ function onTaskComplete(btns) {
             parent.remove();
         }, 400);
 
-
         if (tasksList.childNodes.length == 1) {
             setTimeout(() => {
                 container.classList.add('task_list_empty')
 
             }, 800);
         }
-
     })
-
-
 }
 
 
 // Dark mode
-
 themeBtn.addEventListener('click', function () {
-
-
     var darkTheme = themeBtn.classList.toggle('dark')
 
     if (darkTheme) {
-
         root.style.setProperty('--theme-transition', '1s')
         root.style.setProperty('--primary-color', '#1E1E1E')
         root.style.setProperty('--secondary-color', '#3B3B3B')
@@ -110,4 +96,3 @@ themeBtn.addEventListener('click', function () {
         root.style.setProperty('--container-bg', `url('./assets/Light-empty.svg')`)
     }
 })
-
