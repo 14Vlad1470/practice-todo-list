@@ -11,7 +11,6 @@ var themeBtn = document.querySelector('.theme_toogle_btn');
 taskform.addEventListener('submit', function (e) {
     e.preventDefault();
     var newtaskInputValue = taskform.elements.new_task_input;
-
     addTask(newtaskInputValue.value)
     // Reset input value to empty
     newtaskInputValue.value = '';
